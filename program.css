@@ -1,0 +1,80 @@
+body{
+       background: linear-gradient(to right, #ffffff, #3D74B6); /* Gradasi dari putih ke biru */
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    margin: 10px;
+  }
+}
+
+/* HP */
+@media (max-width: 480px) {
+  body {
+    font-size: 12px;
+    margin: 5px;
+  }
+}
+
+h1 {
+    font-size: 2.8em;
+    margin-bottom: 50px;
+    color: #333;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+    .card-container {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      width: 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .image-box {
+      width: 280px;
+      height: 280px;
+      background-color: #f0f0f0;
+      border-radius: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .title {
+      margin-top: 18px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .btn {
+      margin-top: 10px;
+      background-color: black;
+      color: white;
+      padding: 8px 20px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 13px;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #444;
+    }

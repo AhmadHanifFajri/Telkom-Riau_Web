@@ -1,0 +1,1045 @@
+/* Tablet */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    margin: 10px;
+  }
+}
+
+/* HP */
+@media (max-width: 480px) {
+  body {
+    font-size: 12px;
+    margin: 5px;
+  }
+}
+
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    
+}
+
+.hero-image-container {
+    position: relative;
+    width: 100%;
+
+}
+
+.hero-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease;
+  
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  
+}
+/* ===== Iklan Grid 4 kolom ===== */
+.iklan {
+  padding: 32px 0;
+background: linear-gradient(to right, #ffffff, #3D74B6); /* Gradasi dari putih ke biru */
+
+}
+
+.iklan h1 {
+    text-align: center;
+    font-size: 40px;
+}
+
+.iklan-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 kolom tetap */
+  gap: 20px;
+}
+
+.iklan-item {
+  position: relative;
+  aspect-ratio: 16/9; /* bikin semua seragam */
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f3f4f6;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.iklan-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+}
+
+.iklan-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Responsif (tablet & hp) */
+@media (max-width: 992px) {
+  .iklan-grid {
+    grid-template-columns: repeat(2, 1fr); /* tablet jadi 2 kolom */
+  }
+}
+
+@media (max-width: 576px) {
+  .iklan-grid {
+    grid-template-columns: 1fr; /* hp jadi 1 kolom */
+  }
+}
+
+/* ===== Lightbox ===== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.75);
+  display: none;              /* default tersembunyi */
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+}
+
+.lightbox.is-open {
+  display: flex;
+  margin-top: 140px;
+}
+
+.lightbox-inner {
+  max-width: min(96vw, 1200px);
+  max-height: 90vh;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,.35);
+  background: #000; /* latar belakang netral untuk foto landscape/portrait */
+}
+
+.lightbox-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;        /* tampil penuh tanpa terpotong */
+  display: block;
+  background: #000;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  border: 0;
+  background: rgba(255,255,255,.15);
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  transition: background .2s ease, transform .1s ease;
+}
+
+.lightbox-close:hover {
+  background: rgba(255,255,255,.25);
+  transform: scale(1.05);
+}
+
+/* Opsional: pointer saat hover pada thumbnail */
+.lightbox-trigger {
+  cursor: zoom-in;
+}
+
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.75);display:none;align-items:center;justify-content:center;z-index:1000;padding:24px}
+.lightbox.is-open{display:flex}
+.lightbox-inner{max-width:min(96vw,1200px);max-height:90vh;border-radius:12px;overflow:hidden;background:#000}
+.lightbox-inner img{width:100%;height:100%;object-fit:contain;display:block}
+/* ====== IKLAN GRID (4 kolom) ====== */
+.iklan {
+  padding: 32px 0;
+}
+
+.iklan-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 kolom tetap di desktop */
+  gap: 20px;
+}
+
+.iklan-item {
+  position: relative;
+  aspect-ratio: 16/9;    /* ukuran kartu seragam */
+  overflow: hidden;
+  border-radius: 12px;
+  background: #f3f4f6;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.iklan-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+}
+
+/* Thumbnail boleh crop supaya rapi */
+.iklan-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  cursor: zoom-in;
+}
+
+/* Responsif */
+@media (max-width: 992px) {
+  .iklan-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 576px) {
+  .iklan-grid { grid-template-columns: 1fr; }
+}
+
+/* ====== LIGHTBOX (gambar full TIDAK crop) ====== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.75);
+  display: none;                 /* default tersembunyi */
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+}
+.lightbox.is-open { display: flex; }
+
+.lightbox-inner {
+  display: flex;                 /* agar img bisa center */
+  align-items: center;
+  justify-content: center;
+  max-width: 96vw;
+  max-height: 90vh;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;              /* aman untuk zoom/portrait */
+  box-shadow: 0 12px 30px rgba(0,0,0,.35);
+}
+
+/* Penting: gambar full tidak dipaksa 100% x 100% dan pakai contain */
+.lightbox-inner img {
+  max-width: 96vw;
+  max-height: 90vh;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important; /* kunci anti-crop */
+  display: block;
+  background: #000;
+}
+
+/* Tombol tutup */
+.lightbox-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  border: 0;
+  background: rgba(255,255,255,.15);
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  transition: background .2s ease, transform .1s ease;
+}
+.lightbox-close:hover {
+  background: rgba(255,255,255,.25);
+  transform: scale(1.05);
+}
+
+/* (Opsional) Netralisir aturan global yang bisa bikin crop */
+.lightbox img,
+#lightboxImage {
+  object-fit: contain !important;
+}
+
+
+
+button.prev {
+  left: 0;
+}
+
+button.next {
+  right: 0;
+}
+
+.hero-text {
+    position: absolute;
+    bottom: 20px; /* Sesuaikan posisi teks */
+    left: 20px; /* Sesuaikan posisi teks */
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    z-index: 5; /* Pastikan teks di atas gambar */
+}
+
+.hero-text h1 {
+    margin: 0;
+    font-size: 3em;
+}
+
+.hero-text p {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+
+/* BUMN & AKHLAK Section and Stats Bar */
+.logos-stats-section {
+    padding: 40px 0;
+    background-color: #f4f4f4; /* Latar belakang untuk bagian logo */
+     background: linear-gradient(to right, #ffffff, #3D74B6); /* Gradasi dari putih ke biru */
+}
+
+.logos-container {
+    display: flex;
+    justify-content: center; /* Posisikan logo di tengah */
+    align-items: center;
+    gap: 80px; /* Jarak antara logo */
+    margin-bottom: 40px;
+}
+
+.logo-item img {
+    max-width: 200px; /* Sesuaikan lebar maksimum logo */
+    height: auto;
+}
+
+.akhlak-logo-item {
+    text-align: center;
+}
+
+.akhlak-description {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.4;
+    margin-top: 10px;
+}
+
+.stats-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px 20px;
+    background: linear-gradient(to right, #4a4a4a, #000000); /* Gradien dari gambar */
+    color: #ffffff;
+    text-align: center;
+}
+
+.stat-item {
+    flex: 1;
+    padding: 0 15px;
+}
+
+.stat-number {
+    font-size: 48px;
+    font-weight: bold;
+    transition: all 0.1s ease-in-out;
+}
+
+
+.stat-label {
+    display: block;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+/* Artikel Section */
+.artikel-section {
+    padding: 60px 0;
+    text-align: center;
+     background: linear-gradient(to right, #ffffff, #3D74B6); /* Gradasi dari putih ke biru */
+}
+
+.artikel-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+/* Container baru untuk scroll horizontal */
+.artikel-carousel-wrapper {
+  overflow-x: hidden;       /* atau hidden jika kamu ingin menyembunyikan scrollbar */
+  white-space: nowrap;    /* jika layout-mu pakai inline/inline-block */
+}
+
+/* Sembunyikan scrollbar di beberapa browser (opsional) */
+.artikel-carousel-wrapper::-webkit-scrollbar {
+    height: 8px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+}
+
+.artikel-carousel-wrapper::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+
+.artikel-carousel-wrapper::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+/* Untuk Firefox */
+.artikel-carousel-wrapper {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+
+.artikel-grid {
+    display: flex; /* Ubah dari grid menjadi flex untuk horizontal scroll */
+    flex-wrap: nowrap; /* Penting: mencegah item wrap ke baris berikutnya */
+    gap: 30px; /* Jarak antar kartu */
+    padding: 0 10px; /* Sedikit padding di awal/akhir jika kartu terlalu mepet */
+    justify-content: flex-start; /* Pastikan kartu mulai dari kiri */
+    width: max-content; /* Ini akan membuat lebar flex container menyesuaikan dengan kontennya */
+}
+
+.artikel-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    border: 3px solid transparent;
+    transition: border-color 0.3s ease;
+    flex-shrink: 0; /* Penting: mencegah kartu mengecil */
+    width: 280px; /* Tetapkan lebar tetap untuk kartu artikel */
+}
+
+.artikel-card:hover {
+    border-color: #000000; /* Border hitam saat hover */
+}
+
+.artikel-card img {
+    width: 100%;
+    height: 150px;
+    aspect-ratio: 4 / 3; /* atau coba 16 / 9 */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background-color: #f4f4f4; /* fallback jika gambar loading */
+}
+
+
+
+.artikel-card .artikel-title {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.artikel-card .artikel-type {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 15px;
+    padding: 3px 8px;
+    border-radius: 5px;
+}
+
+.view-button {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    margin-top: auto; /* Dorong tombol ke bawah */
+}
+
+.view-button:hover {
+    background-color: #333333;
+}
+
+/* Navigasi Panah Artikel (Fungsional dengan JS) */
+.artikel-nav-arrows {
+    display: flex;
+    justify-content: space-between; /* Panah di kiri dan kanan */
+    width: 100%; /* Lebar penuh */
+    max-width: 1200px; /* Sesuaikan dengan container utama */
+    margin: 20px auto 0 auto; /* Posisikan di bawah carousel */
+    padding: 0 20px; /* Sesuai dengan padding container */
+}
+
+.artikel-nav-arrows .arrow-btn {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5em;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.artikel-nav-arrows .arrow-btn:hover {
+    background-color: #333;
+}
+
+/* Product Section (untuk index.html, carousel lama) */
+.product-section {
+    padding: 60px 0;
+    text-align: center;
+    background-color: #ffffff; /* Latar belakang putih */
+     background: linear-gradient(to right, #ffffff, #3D74B6); /* Gradasi dari putih ke biru */
+}
+
+.product-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.product-carousel {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Izinkan wrapping pada layar kecil */
+    position: relative;
+    /* Panah navigasi (akan diimplementasikan dengan JS, ini hanya styling visual dasar) */
+}
+
+/* Styling panah (hanya visual, perlu JS untuk fungsi) */
+
+
+
+
+@media (max-width: 1250px) { /* Sembunyikan panah jika container terlalu sempit */
+    .product-carousel::before,
+    .product-carousel::after {
+        display: none;
+    }
+}
+
+
+.product-card {
+    width: 300px;
+    height: 250px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    background-color: #fff;
+    flex-shrink: 0; /* Penting untuk carousel, mencegah kartu mengecil */
+}
+
+.product-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* ganti dari cover ke contain */
+    display: block;
+    background-color: #f4f4f4; /* opsional: beri latar belakang abu jika gambar kecil */
+}
+
+
+
+.carousel-dots {
+    margin-bottom: 30px;
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #333;
+}
+
+.see-all-product-button {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.see-all-product-button:hover {
+    background-color: #333333;
+}
+
+/* TelkomGroup Section */
+.telkomgroup-section {
+    padding: 80px 0;
+    background-color: #f4f4f4; /* Latar belakang abu-abu muda */
+     background: linear-gradient(to right, #ffffff, #3D74B6); /* Gradasi dari putih ke biru */
+}
+
+.telkomgroup-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+}
+
+.telkomgroup-text {
+    flex: 1;
+    min-width: 300px;
+    margin-right: 40px;
+}
+
+.telkomgroup-text h2 {
+    font-size: 3em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.telkomgroup-text p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+}
+
+.telkomgroup-map {
+    padding-right: 0;
+    margin-right: 0;
+     flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items:flex-end !important;
+}
+
+
+
+.telkomgroup-map img {
+    width: 100%; /* Ubah sesuai kebutuhan: bisa 100%, 120%, dll */
+    max-width: 700px; /* Opsional, batas ukuran maksimum */
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
+      justify-content: flex-end;
+      align-items:flex-end !important;
+      padding-left: 50px;
+}
+
+
+.telkomgroup-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.telkomgroup-card {
+    background-color: #333; /* Latar belakang gelap sesuai gambar */
+    color: #ffffff;
+    border-radius: 15px;
+    padding: 30px;
+    width: 300px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.telkomgroup-card:hover {
+    transform: translateY(-5px); /* Efek angkat saat hover */
+}
+
+.telkomgroup-card .card-icon {
+    width: 100px;
+    height: 100px;
+    background-color: #ffffff;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.telkomgroup-card .card-icon img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.telkomgroup-card p {
+    font-size: 0.95em;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.open-website-button {
+    background: none;
+    border: none;
+    color: #ff0000; /* Warna merah untuk teks tombol */
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    transition: color 0.3s ease;
+}
+
+.open-website-button:hover {
+    color: #ff3333;
+}
+
+.open-website-button .arrow {
+    margin-left: 5px;
+    font-size: 1.2em;
+}
+
+
+/* Product Page Specific Styles (BARU) */
+.page-product-section {
+    padding: 60px 0;
+    background-color: #f4f4f4; /* Sesuaikan dengan latar belakang body */
+    text-align: center; /* Untuk memusatkan judul H1 */
+    background: linear-gradient(to right, #ffffff, #3D74B6); /* Gradasi dari putih ke biru */
+}
+
+.page-product-section h1 {
+    font-size: 2.8em;
+    margin-bottom: 50px;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 3 kolom, responsif */
+    gap: 30px; /* Jarak antar kartu */
+    justify-content: center; /* Memusatkan grid jika ada sisa ruang */
+    max-width: 1000px; /* Lebar maksimum grid, sesuaikan jika perlu */
+    margin: 0 auto; /* Memusatkan grid dalam container */
+}
+
+.product-item-card {
+    background: linear-gradient(135deg, #444444, #222222); /* Gradien gelap seperti gambar */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    padding: 25px;
+    color: #ffffff;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 250px; /* Tinggi kartu tetap */
+    position: relative;
+    overflow: hidden; /* Pastikan tidak ada yang keluar dari kartu */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item-card:hover {
+    transform: translateY(-8px); /* Efek angkat saat hover */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+}
+
+.product-item-card .card-icon-large {
+    width: 100px; /* Ukuran icon */
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.6); /* Latar belakang semi-transparan untuk icon */
+    border-radius: 10px; /* Sedikit lengkungan pada background icon */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.product-item-card .card-icon-large img {
+    max-width: 100%; /* Ukuran gambar icon di dalam container */
+    max-height: 100%;
+    object-fit: contain;
+    
+}
+
+.product-item-card .product-name {
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-top: auto; /* Dorong ke bawah */
+    margin-bottom: 0;
+}
+
+.product-item-card .view-detail-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.product-item-card .view-detail-button:hover {
+    background-color: #eee;
+    transform: scale(1.05);
+}
+
+.product-item-card .view-detail-button .arrow-up {
+    font-size: 1.5em;
+    color: #000000; /* Warna panah hitam */
+    line-height: 1; /* Hapus spasi ekstra di sekitar panah */
+}
+
+
+/* Responsive Design - Adjustments for smaller screens */
+@media (max-width: 992px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        margin-top: 15px;
+    }
+
+    .main-nav ul li {
+        margin: 10px 0;
+    }
+
+    .register-button {
+        margin-top: 15px;
+    }
+
+    .hero-text h1 {
+        font-size: 2em;
+    }
+
+    .hero-text p {
+        font-size: 1.2em;
+    }
+
+    .logos-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .stats-bar {
+        flex-direction: column;
+    }
+
+    .stat-item {
+        margin-bottom: 20px;
+    }
+
+    /* Artikel Section - Responsive Adjustments */
+   .artikel-carousel-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.artikel-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 30px;
+    padding: 0 10px;
+    justify-content: flex-start;
+    width: max-content;
+}
+
+
+    
+    .artikel-card {
+        width: 280px;
+        flex-shrink: 0;
+    }
+
+    .artikel-nav-arrows {
+        display: none;
+    }
+
+    /* Product Section (untuk index.html) - Responsive Adjustments */
+    .product-carousel {
+        flex-direction: column; /* Tumpuk kartu produk */
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    .product-carousel::before,
+    .product-carousel::after {
+        display: none;
+    }
+
+    .product-card {
+        width: 80%; /* Sesuaikan lebar untuk kartu yang ditumpuk */
+        max-width: 300px;
+    }
+
+    /* Product Page Specific - Responsive Adjustments */
+    .page-product-section h1 {
+        font-size: 2em;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr; /* Satu kolom di layar kecil */
+        max-width: 400px; /* Batasi lebar untuk ponsel */
+    }
+
+    .product-item-card {
+        height: 220px; /* Sesuaikan tinggi kartu di mobile */
+    }
+
+    .product-item-card .card-icon-large {
+        width: 70px;
+        height: 70px;
+    }
+    
+
+    .telkomgroup-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .telkomgroup-text {
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+
+    .telkomgroup-map {
+        text-align: center;
+        min-width: unset;
+    }
+
+    .telkomgroup-cards {
+    display: flex; /* Mengubah layout menjadi horizontal */
+    overflow-x: auto; /* Memungkinkan scroll horizontal */
+    -webkit-overflow-scrolling: touch; /* Scroll halus di perangkat iOS */
+    scroll-behavior: smooth; /* Efek scroll halus */
+    gap: 30px; /* Jarak antar kartu */
+    padding: 0 10px; /* Padding agar tidak terlalu mepet */
+    justify-content: flex-start; /* Mengatur posisi kartu ke kiri */
+    width: max-content; /* Menyesuaikan lebar dengan konten */
+}
+
+/* Jika ingin menyembunyikan scrollbar di beberapa browser */
+.telkomgroup-cards::-webkit-scrollbar {
+    height: 8px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+}
+
+.telkomgroup-cards::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+
+.telkomgroup-cards::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+
+    .footer-content-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-nav ul {
+        text-align: center;
+        margin-top: 30px;
+    }
+}
+
+/* Sangat kecil (ponsel) */
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 1.8em;
+    }
+
+    .hero-text p {
+        font-size: 1.1em;
+    }
+
+    .stat-number {
+        font-size: 36px;
+    }
+
+    .stat-label {
+        font-size: 16px;
+    }
+
+    .artikel-section h2,
+    .product-section h2,
+    .telkomgroup-text h2 {
+        font-size: 2em;
+    }
+
+    .product-card {
+        width: 100%;
+    }
+
+    /* Product Page Specific - Very Small Screens */
+    .product-item-card {
+        padding: 20px;
+    }
+    .product-item-card .product-name {
+        font-size: 1.3em;
+    }
+    .product-item-card .view-detail-button {
+        width: 40px;
+        height: 40px;
+        bottom: 15px;
+        right: 15px;
+    }
+    .product-item-card .view-detail-button .arrow-up {
+        font-size: 1.3em;
+    }
+    
+
+}
+

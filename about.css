@@ -1,0 +1,339 @@
+/* about-us-styles.css - Gaya Khusus Halaman About Us */
+
+/* About Us Page Specific Styles */
+.vision-mission-section {
+    padding: 60px 0;
+    background-color: #f4f4f4;
+    text-align: center;
+         background: linear-gradient(to right, #ffffff, #3D74B6); /* Gradasi dari putih ke biru */
+}
+
+.our-team-section{
+         background: linear-gradient(to right, #ffffff, #3D74B6); /* Gradasi dari putih ke biru */
+}
+
+.vision-mission-section h2,
+.our-team-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    color: #333;
+    text-transform: uppercase;
+
+}
+
+.vm-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.vm-card {
+    background-color: #000000;
+    border-radius: 15px;
+    padding: 40px;
+    color: #ffffff;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    min-height: 250px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.vm-content {
+    position: relative;
+    z-index: 2;
+}
+
+.vm-heading {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #ff0000;
+}
+
+.vm-text {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.vm-image-placeholder {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 200px;
+    height: auto;
+    opacity: 0.8;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.our-team-section {
+    padding: 60px 0;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.team-card {
+    background-color: #f4f4f4;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.team-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.team-name {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.team-title {
+    font-size: 0.9em;
+    color: #777;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.view-profile-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+}
+
+.view-profile-button:hover {
+    background-color: #333333;
+    transform: scale(1.05);
+}
+
+.view-profile-button .arrow-up {
+    font-size: 1.3em;
+    line-height: 1;
+}
+
+/* Modal (Popup) Styles */
+.modal {
+    display: none; /* Sembunyikan modal secara default */
+    position: fixed; /* Tetap di viewport */
+    z-index: 1001; /* Harus di atas semua elemen lain */
+    left: 0;
+    top: 40px;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Memungkinkan scrolling jika konten terlalu panjang */
+    background-color: rgba(0,0,0,0.7); /* Latar belakang gelap transparan */
+    
+    /* HAPUS display: flex; justify-content: center; align-items: center; DARI SINI */
+    /* Properti ini akan ditambahkan oleh JavaScript saat modal dibuka */
+
+    padding: 20px; /* Padding agar konten tidak terlalu mepet di mobile */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: auto; /* Ini membantu memusatkan di browser lama atau jika display: block */
+    padding: 0; /* Padding di sini 0, padding sebenarnya di modal-body */
+    border-radius: 15px; /* Sesuaikan dengan gambar */
+    position: relative;
+    width: 90%; /* Lebar default */
+    max-width: 500px; /* Lebar maksimum seperti gambar */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    display: flex; /* Untuk menata elemen di dalamnya */
+    flex-direction: column;
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10; /* Pastikan tombol X di atas konten */
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+.modal-body {
+    padding: 20px 20px 30px 20px; /* Padding khusus di dalam body modal */
+    background-color: #000; /* Latar belakang hitam untuk modal body seperti gambar */
+    border-radius: 0 0 15px 15px; /* Lengkungan hanya di bawah */
+    color: #fff; /* Teks putih */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Pusatkan konten */
+}
+
+.team-member-detail {
+    display: flex;
+    flex-direction: column; /* Tumpuk gambar dan info di mobile */
+    align-items: center; /* Pusatkan */
+    gap: 20px;
+    width: 100%; /* Lebar penuh */
+    margin-bottom: 20px;
+}
+
+.modal-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #ff0000; /* Border merah seperti gambar */
+    box-shadow: 0 0 10px rgba(255,0,0,0.5); /* Bayangan merah */
+    margin-top: -80px; /* Dorong ke atas agar tumpang tindih dengan header putih */
+    background-color: #fff; /* Untuk mengatasi latar belakang gambar jika tidak transparan */
+    padding: 5px; /* Sedikit padding untuk border */
+}
+
+.detail-info {
+    text-align: center; /* Pusatkan teks info */
+    width: 100%;
+}
+
+.detail-name {
+    font-size: 1.6em;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.detail-title {
+    font-size: 1.1em;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.modal-divider {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    width: 80%;
+    margin: 20px auto;
+}
+
+.detail-section-title {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #ff0000; /* Warna merah untuk judul Riwayat Pendidikan */
+}
+
+.detail-education-univ {
+    font-size: 1em;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.detail-education-major {
+    font-size: 0.9em;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.close-modal-button {
+    background-color: #000; /* Latar belakang hitam */
+    color: #ff0000; /* Teks merah */
+    border: 2px solid #ff0000; /* Border merah */
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 20px; /* Jarak dari konten atas */
+}
+
+.close-modal-button:hover {
+    background-color: #ff0000;
+    color: #fff;
+}
+
+
+/* Responsive adjustments for Modal */
+@media (max-width: 600px) {
+    .modal-content {
+        max-width: 95%;
+    }
+
+    .modal-image {
+        margin-top: -60px; /* Sesuaikan dorongan ke atas */
+        width: 120px;
+        height: 120px;
+    }
+
+    .detail-name {
+        font-size: 1.4em;
+    }
+
+    .detail-title {
+        font-size: 1em;
+    }
+
+    .detail-section-title {
+        font-size: 1em;
+    }
+
+    .detail-education-univ,
+    .detail-education-major {
+        font-size: 0.9em;
+    }
+
+    .close-button {
+        font-size: 24px;
+        top: 10px;
+        right: 15px;
+    }
+}

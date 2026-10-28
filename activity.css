@@ -1,0 +1,309 @@
+/* Tablet */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    margin: 10px;
+  }
+}
+
+/* HP */
+@media (max-width: 480px) {
+  body {
+    font-size: 12px;
+    margin: 5px;
+  }
+}
+
+
+/* activity-styles.css - Gaya Khusus Halaman Activity */
+
+.activity-listing-section {
+    padding: 60px 0;
+    background-color: #ffffff; /* Latar belakang putih seperti gambar */
+    text-align: center; /* Untuk memusatkan judul H1 */
+         background: linear-gradient(to right, #ffffff, #3D74B6); /* Gradasi dari putih ke biru */
+}
+
+.activity-listing-section h1 {
+    font-size: 2.8em;
+    margin-bottom: 50px;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.activity-list {
+    display: flex;
+    flex-direction: column; /* Item akan menumpuk secara vertikal */
+    gap: 40px; /* Jarak antar item aktivitas */
+    max-width: 800px; /* Batasi lebar daftar aktivitas */
+    margin: 0 auto; /* Pusatkan daftar */
+    padding: 0 20px; /* Padding samping */
+}
+
+.activity-item {
+    display: flex; /* Gunakan flexbox untuk layout gambar dan konten */
+    align-items: flex-start; /* Sejajarkan di bagian atas */
+    gap: 30px; /* Jarak antara gambar dan teks */
+    background-color: #f4f4f4; /* Latar belakang abu-abu muda untuk setiap item */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+    text-align: left; /* Teks konten ke kiri */
+}
+
+.activity-thumbnail {
+    flex-shrink: 0; /* Mencegah thumbnail mengecil */
+    width: 200px; /* Lebar tetap untuk thumbnail */
+    height: 150px; /* Tinggi tetap untuk thumbnail */
+    border-radius: 10px;
+    overflow: hidden; /* Pastikan gambar tidak keluar dari batas */
+    border: 3px solid #ddd; /* Border seperti di gambar */
+}
+
+.activity-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Pastikan gambar mengisi area thumbnail */
+    display: block;
+    border-radius: 10px; /* Lengkungan pada gambar */
+}
+
+.activity-content {
+    flex-grow: 1; /* Biarkan konten teks mengambil sisa ruang */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.activity-date {
+    font-size: 0.85em;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.activity-title {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.activity-description {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.activity-button {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9em;
+    text-decoration: none; /* Karena ini adalah <a> tag */
+    align-self: flex-start; /* Sejajarkan tombol ke kiri */
+    transition: background-color 0.3s ease;
+}
+
+.activity-button:hover {
+    background-color: #333333;
+}
+
+/* Modal (Popup) Styles - Dicopy dari about-us-styles.css dan disesuaikan */
+.modal {
+    display: none; /* Sembunyikan modal secara default */
+    position: fixed; /* Tetap di viewport */
+    z-index: 1001; /* Harus di atas semua elemen lain */
+    left: 0;
+    top: 40px;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Memungkinkan scrolling jika konten terlalu panjang */
+    background-color: rgba(0,0,0,0.7); /* Latar belakang gelap transparan */
+    
+    /* Properti ini akan diaktifkan oleh JavaScript saat modal dibuka */
+    /* display: flex; justify-content: center; align-items: center; */
+
+    padding: 20px; /* Padding agar konten tidak terlalu mepet di mobile */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 0;
+    border-radius: 15px; /* Sesuaikan dengan gambar */
+    position: relative;
+    width: 90%;
+    max-width: 700px; /* Lebar maksimum modal aktivitas agak lebih lebar */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+.modal-body {
+    padding: 20px 20px 30px 20px;
+    background-color: #000; /* Latar belakang hitam untuk modal body seperti gambar */
+    border-radius: 0 0 15px 15px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Konten di tengah secara horizontal */
+}
+
+.activity-modal-detail {
+    display: flex;
+    flex-direction: column; /* Default vertikal untuk mobile */
+    gap: 20px;
+    width: 100%;
+    align-items: center; /* Pusatkan item jika ditumpuk */
+    text-align: center; /* Pusatkan teks */
+}
+
+.modal-activity-image {
+    width: 100%; /* Lebar penuh */
+    max-width: 400px; /* Batasi lebar */
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 3px solid #ff0000; /* Border merah */
+    box-shadow: 0 0 10px rgba(255,0,0,0.5);
+    margin-bottom: 20px; /* Jarak ke konten bawah */
+}
+
+.activity-modal-info {
+    flex-grow: 1;
+    text-align: center; /* Pusatkan teks info */
+}
+
+.activity-modal-info .activity-date {
+    font-size: 0.9em;
+    color: #ccc;
+    margin-bottom: 5px;
+}
+
+.activity-modal-info .activity-title {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.activity-modal-info .activity-description {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.close-modal-button {
+    background-color: #000;
+    color: #ff0000;
+    border: 2px solid #ff0000;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 20px;
+}
+
+.close-modal-button:hover {
+    background-color: #ff0000;
+    color: #fff;
+}
+
+
+/* Responsive adjustments for Activity Page */
+@media (max-width: 768px) {
+    .activity-listing-section h1 {
+        font-size: 2em;
+    }
+
+    .activity-item {
+        flex-direction: column; /* Tumpuk gambar dan konten secara vertikal */
+        align-items: center; /* Pusatkan item saat ditumpuk */
+        text-align: center; /* Pusatkan teks konten */
+    }
+
+    .activity-thumbnail {
+        width: 100%; /* Lebar penuh thumbnail di mobile */
+        max-width: 250px; /* Batasi lebar agar tidak terlalu besar */
+        height: 180px; /* Sesuaikan tinggi thumbnail */
+        margin-bottom: 20px; /* Jarak setelah gambar */
+    }
+
+    .activity-button {
+        align-self: center; /* Pusatkan tombol di mobile */
+    }
+
+    /* Modal Responsive */
+    .modal-content {
+        max-width: 95%;
+        padding: 0; /* Pastikan tidak ada padding ekstra */
+    }
+    .activity-modal-detail {
+        flex-direction: column; /* Selalu tumpuk di mobile */
+        align-items: center;
+        text-align: center;
+    }
+    .modal-activity-image {
+        max-width: 90%; /* Sesuaikan ukuran gambar di modal mobile */
+    }
+    .activity-modal-info {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .activity-item {
+        padding: 15px;
+        gap: 20px;
+    }
+
+    .activity-title {
+        font-size: 1.3em;
+    }
+
+    .activity-description {
+        font-size: 0.9em;
+    }
+
+    .activity-button {
+        padding: 7px 18px;
+        font-size: 0.85em;
+    }
+
+    .modal-body {
+        padding: 15px 15px 20px 15px;
+    }
+    .activity-modal-info .activity-title {
+        font-size: 1.5em;
+    }
+    .activity-modal-info .activity-description {
+        font-size: 0.9em;
+    }
+}
